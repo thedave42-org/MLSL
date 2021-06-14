@@ -70,16 +70,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
-    - name: Generate PDF Report
-      uses: peter-murray/github-security-report-action@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        sarifReportDir: /home/runner/work/MLSL/results/
-        outputDir: .        
-        
-    - name: Upload PDF Report as Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: reports
-        path: ./*.pdf
